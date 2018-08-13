@@ -2,7 +2,7 @@
   "name": "bfx-hf-backtest",
   "version": "0.0.1",
   "description": "HF backtesting logic module",
-  "main": "dist/index.js",
+  "main": "index.js",
   "engines": {
     "node": ">=6"
   },
