@@ -6,7 +6,7 @@ const HFS = require('bfx-hf-strategy')
 const HFBT = require('../')
 
 const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
-const { Candle } = require('bitfinex-api-node/lib/models')
+const { Candle } = require('bfx-api-node-models')
 const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
 const rawCandleData = require('./btc_candle_data.json')
 
