@@ -15,9 +15,9 @@ const market = {
 const strat = EMAStrategy(market)
 const run = async () => {
   await HFBT.execOnline([strat], {
-    from: now - (90 * 24 * 60 * 60 * 1000),
+    from: now - (3 * 24 * 60 * 60 * 1000),
     to: now,
-    trades: false,
+    trades: true,
     ...market
   })
 }
