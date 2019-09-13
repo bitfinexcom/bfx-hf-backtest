@@ -31,7 +31,7 @@ const run = async () => {
   await HFBT.execOffline(strat, {
     trades: {},
     candles: {
-      [candleKey]: candles,
+      [candleKey]: candles
     }
   })
 }
