@@ -1,0 +1,29 @@
+# 1.0.3
+- manifest: bump deps
+- meta: add github issue/pr templates
+- meta: standardize travis config
+- meta: add placeholder npm test
+
+# 1.0.2
+- feature: simulated candle trades
+- refactor: return promise from execOnline
+- feature: add progress callback to execOffline
+
+# 1.0.1
+- refactor: rm moment.js dep/usage
+- manifest: bump bfx-hf-strategy
+- fix: add new exchange field to exed.bt command params
+
+# 1.0.0
+- manifest: bump bfx-hf-strategy
+- fix: update submit.bt data-server command format
+- refactor: minor internals
+
+# 1.0.0-alpha.1
+- fix: rm package-lock.json
+- fix: rm yarn.lock
+- manifest: bump bfx-hf-strategy
+
+# 1.0.0-alpha
+- Initial version
+
