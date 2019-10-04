@@ -1,3 +1,6 @@
+# 1.0.4
+- docs: create/update
+
 # 1.0.3
 - manifest: bump deps
 - meta: add github issue/pr templates
