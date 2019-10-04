@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-backtest",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "HF backtesting logic module",
   "main": "index.js",
   "engines": {
@@ -23,7 +23,9 @@
     "unit": "DEBUG='bfx:hf:*' NODE_PATH=lib/ NODE_ENV=test istanbul cover _mocha -- -R spec -b --recursive",
     "test-without-coverage": "NODE_ENV=test mocha -R spec -b --recursive",
     "build": "babel -q ./index.js -d ./dist && babel -q ./lib -d ./dist/lib && copy package.json dist",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "exec_docs": "node_modules/jsdoc-to-markdown/bin/cli.js lib/*.js > docs/exec.md",
+    "docs": "npm run exec_docs"
   },
   "repository": {
     "type": "git",
@@ -72,6 +74,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
     "istanbul": "^0.4.5",
+    "jsdoc-to-markdown": "^5.0.1",
     "mocha": "^6.2.0",
     "standard": "^14.2.0",
     "webpack": "^2.4.1"
