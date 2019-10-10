@@ -43,7 +43,7 @@ HFBT.execOffline(strat, {
 
 ### Docs
 
-Refer to `docs/exec.md` for JSDoc-generated API documentation, and the `examples/` folder for executable examples.
+[Refer to `docs/exec.md`](/docs/exec.md) for JSDoc-generated API documentation, and the [`examples/`](/examples) folder for executable examples.
 
 ### Examples
 #### Offline Backtests
