@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-backtest",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "HF backtesting logic module",
   "main": "index.js",
   "engines": {
