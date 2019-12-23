@@ -1,3 +1,6 @@
+# 1.0.5
+- fix: bug in candle trade simulation where strategy state was clobbered
+
 # 1.0.4
 - docs: create/update
 
