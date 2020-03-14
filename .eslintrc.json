@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "jsdoc"
+    "jsdoc",
+    "mocha"
   ],
 
   "env": {
@@ -16,7 +17,8 @@
     "plugin:node/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:lodash/recommended"
+    "plugin:lodash/recommended",
+    "plugin:mocha/recommended"
   ],
 
   "parserOptions": {
