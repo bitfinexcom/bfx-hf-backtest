@@ -1,22 +1,26 @@
-## Bitfinex Honey Framework Backtesting Tools for Node.JS
+# Bitfinex Honey Framework Backtesting Tools for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-backtest.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-backtest)
 
-This repo provides an interface for executing backtests using either offline data, or a `bfx-hf-data-server` instance for historical Bitfinex market data.
+This repo provides an interface for executing backtests for
+[bfx-hf-strategy](https://github.com/bitfinexcom/bfx-hf-strategy) strategies
+using either offline data, or a
+[bfx-hf-data-server](https://github.com/bitfinexcom/bfx-hf-data-server) instance
+for historical Bitfinex market data.
 
-### Features
+## Features
 
 * Offline backtest execution with user-supplied trade & candle data
 * Online backtest execution with data from `bfx-hf-data-server`
 * Simulates trades within a candle if none are provided
 
-### Installation
+## Installation
 
 ```bash
 npm i --save bfx-hf-backtest
 ```
 
-### Quickstart
+## Quickstart
 
 ```js
 const HFS = require('bfx-hf-strategy')
@@ -41,13 +45,18 @@ HFBT.execOffline(strat, {
 })
 ```
 
-### Docs
+## Docs
 
-[Refer to `docs/`](/docs) for JSDoc-generated API documentation, and the [`examples/`](/examples) folder for executable examples.
+[Refer to `docs/`](/docs) for JSDoc-generated API documentation, and the
+[`examples/`](/examples) folder for executable examples.
 
-### Examples
-#### Offline Backtests
-To execute a backtest of a trading strategy using historical data, the `execOffline` method is provided which will run the strategy against each trade & candle in-order by timestamp:
+## Examples
+
+### Offline Backtests
+
+To execute a backtest of a trading strategy using historical data, the
+`execOffline` method is provided which will run the strategy against each trade
+& candle in-order by timestamp:
 
 ```js
 const HFS = require('bfx-hf-strategy')
@@ -91,8 +100,11 @@ try {
 }
 ```
 
-#### Online Backtests
-Online backtests are executed a running `bfx-hf-data-server` instance, which will automatically synchronize historical data as needed and pass it to the backtesting logic:
+### Online Backtests
+
+Online backtests are executed a running `bfx-hf-data-server` instance, which
+will automatically synchronize historical data as needed and pass it to the
+backtesting logic:
 
 ```js
 const HFBT = require('bfx-hf-backtest')
@@ -124,7 +136,7 @@ try {
 }
 ```
 
-### Contributing
+## Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
