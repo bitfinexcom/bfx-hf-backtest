@@ -30,7 +30,7 @@
     "build": "babel -q ./index.js -d ./dist && babel -q ./lib -d ./dist/lib && copy package.json dist",
     "postinstall": "npm run build",
     "exec_docs": "node_modules/jsdoc-to-markdown/bin/cli.js lib/*.js > docs/exec.md",
-    "docs": "npm run exec_docs"
+    "docs": "rm -rf docs && node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
     "type": "git",
@@ -72,6 +72,7 @@
     "chai": "^4.2.0",
     "compression-webpack-plugin": "^3.1.0",
     "create-index": "^2.3.0",
+    "docdash": "^1.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-loader": "^3.0.3",
