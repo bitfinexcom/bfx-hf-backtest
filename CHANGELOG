@@ -1,3 +1,6 @@
+# 1.0.6
+- meta: update dependencies + eslint config, switch to nyc for coverage
+
 # 1.0.5
 - fix: bug in candle trade simulation where strategy state was clobbered
 
