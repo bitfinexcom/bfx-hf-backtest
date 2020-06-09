@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-backtest.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-backtest)
 
-This repo provides an interface for executing backtests using either offline data, or a `bfx-hf-data-server` instance for historical Bitfinex market data.
+This repo provides an interface for executing backtests using either offline
+data, or a `bfx-hf-data-server` instance for historical Bitfinex market data.
 
 ### Features
 
@@ -43,11 +44,16 @@ HFBT.execOffline(strat, {
 
 ### Docs
 
-[Refer to `docs/exec.md`](/docs/exec.md) for JSDoc-generated API documentation, and the [`examples/`](/examples) folder for executable examples.
+API documentation can be found in [`docs/reference.md`](docs/reference.md), and
+examples in the [`examples`](examples) folder.
 
 ### Examples
+
 #### Offline Backtests
-To execute a backtest of a trading strategy using historical data, the `execOffline` method is provided which will run the strategy against each trade & candle in-order by timestamp:
+
+To execute a backtest of a trading strategy using historical data, the
+`execOffline` method is provided which will run the strategy against each trade
+& candle in-order by timestamp:
 
 ```js
 const HFS = require('bfx-hf-strategy')
@@ -92,7 +98,10 @@ try {
 ```
 
 #### Online Backtests
-Online backtests are executed a running `bfx-hf-data-server` instance, which will automatically synchronize historical data as needed and pass it to the backtesting logic:
+
+Online backtests are executed a running `bfx-hf-data-server` instance, which
+will automatically synchronize historical data as needed and pass it to the
+backtesting logic:
 
 ```js
 const HFBT = require('bfx-hf-backtest')
