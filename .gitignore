@@ -7,3 +7,6 @@ npm-debug.log
 *.swp
 .DS_Store
 package-lock.json
+tags
+.nyc_output
+coverage
