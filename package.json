@@ -60,6 +60,7 @@
     "ws": "^6.0.0"
   },
   "devDependencies": {
+    "async": "^3.2.0",
     "babel-eslint": "^7.2.2",
     "babel-loader": "^6.4.1",
     "babel-plugin-lodash": "^3.2.11",
@@ -73,6 +74,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
+    "hypercore": "^9.5.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^5.0.1",
     "mocha": "^6.2.0",
