@@ -60,6 +60,7 @@
     "ws": "^6.0.0"
   },
   "devDependencies": {
+    "@hyperswarm/replicator": "^1.7.2",
     "async": "^3.2.0",
     "babel-eslint": "^7.2.2",
     "babel-loader": "^6.4.1",
@@ -74,6 +75,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
+    "hyperbee": "git+https://github.com/mafintosh/hyperbee.git",
     "hypercore": "^9.5.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^5.0.1",
