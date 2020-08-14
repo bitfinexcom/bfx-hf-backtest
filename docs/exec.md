@@ -8,6 +8,10 @@
 <dd><p>Executes a backtest for the specified period/symbol/tf, logs results to the
 console.</p>
 </dd>
+<dt><a href="#execStream">execStream(strategy, market, args, progressCallback)</a></dt>
+<dd><p>Executes a backtest on a dazaar market data stream, logs results to the
+console.</p>
+</dd>
 </dl>
 
 <a name="execOffline"></a>
@@ -48,4 +52,22 @@ console.
 | args.seedPeriod | <code>number</code> | optional, calculated from indicators |
 | args.candleFields | <code>string</code> \| <code>Array.&lt;string&gt;</code> |  |
 | args.tradeFields | <code>string</code> \| <code>Array.&lt;string&gt;</code> |  |
+
+<a name="execStream"></a>
+
+## execStream(strategy, market, args, progressCallback)
+Executes a backtest on a dazaar market data stream, logs results to the
+console.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| strategy | <code>Array.&lt;Object&gt;</code> |  |
+| market | <code>Object</code> |  |
+| args | <code>Object</code> |  |
+| args.from | <code>number</code> \| <code>Date</code> | backtest period start timestamp |
+| args.to | <code>number</code> \| <code>Date</code> | backtest period end timestamp |
+| args.isTrade | <code>function</code> | optional, function to detect a trade vs. a candle |
+| progressCallback | <code>function</code> | optional, called with i/total updates |
 
