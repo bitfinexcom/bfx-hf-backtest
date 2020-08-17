@@ -46,6 +46,7 @@ HFBT.execOffline(strat, {
 [Refer to `docs/exec.md`](/docs/exec.md) for JSDoc-generated API documentation, and the [`examples/`](/examples) folder for executable examples.
 
 ### Examples
+
 #### Offline Backtests
 To execute a backtest of a trading strategy using historical data, the `execOffline` method is provided which will run the strategy against each trade & candle in-order by timestamp:
 
@@ -122,6 +123,61 @@ try {
 } catch (e) {
   console.error(e)
 }
+```
+
+#### Dazaar Market Data
+
+Dazaar Market data can be used to run a strategy:
+
+```js
+const hypercore = require('hypercore')
+const Hyperbee = require('hyperbee')
+const replicate = require('@hyperswarm/replicator')
+
+const HFBT = require('bfx-hf-backtest')
+const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
+const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
+
+const hopts = {}
+
+const hbOpts = {
+  valueEncoding: 'json'
+}
+
+const strat = EMAStrategy(market)
+
+// pu in your dazaar market data key here
+const key = Buffer.from('7c6057e7ac2f19fcacbee2853554b9a24da85797b1cef31b330465d0f24d7fb1', 'hex')
+const feed = hypercore(path.join(__dirname, 'dbs', 'testCOPY'), key, { sparse: true })
+
+const db = new Hyperbee(feed, hbOpts)
+
+db.feed.ready(async () => {
+  replicate(feed, { lookup: true, live: true })
+
+  const { exec, onEnd } = await HFBT.execStream(strat, market, {
+    from,
+    to
+  })
+
+  // dazaar market data 5min candles
+  const kp = 'c!5m!'
+
+  const from = 1358182044000
+  const to = 1358342119000
+
+  const s = db.createReadStream({ gte: kp + from, lte: kp + to })
+
+  let btState
+  s.on('data', async (data) => {
+    const { key, value } = data
+    btState = await exec(key, value)
+  })
+
+  s.on('end', async () => {
+    btState = await onEnd(btState)
+  })
+})
 ```
 
 ### Contributing
