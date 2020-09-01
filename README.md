@@ -125,60 +125,39 @@ try {
 }
 ```
 
-#### Dazaar Market Data
+#### Bitfinex Terminal Data
 
-Dazaar Market data can be used to run a strategy:
+Bitfinex Terminal data can be used to run a strategy. There is also a [full blog article](https://github.com/bitfinexcom/bitfinex-terminal/blob/master/articles/backtesting-with-hf.md) on this.
 
+[`examples/`](/examples/bfx_terminal.js)
 ```js
-const hypercore = require('hypercore')
-const Hyperbee = require('hyperbee')
-const replicate = require('@hyperswarm/replicator')
+const strat = EMAStrategy(market)
+const from = get24HoursAgo(new Date())
+const to = new Date()
 
-const HFBT = require('bfx-hf-backtest')
-const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
-const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
+const { exec, onEnd } = await HFBT.execStream(strat, market, {
+  from,
+  to
+  // isTrade: null, // you can pass a custom `isTrade` frunction here in options
+})
 
-const hopts = {}
+let btState
 
-const hbOpts = {
-  valueEncoding: 'json'
+// db is a bitfinex terminal hyperbee stream
+const stream = db.createReadStream({
+  gte: { candle: '5m', timestamp: from },
+  lte: { candle: '5m', timestamp: to }
+})
+
+for await (const data of stream) {
+  const { key, value } = data
+  btState = await exec(key, value)
 }
 
-const strat = EMAStrategy(market)
-
-// pu in your dazaar market data key here
-const key = Buffer.from('7c6057e7ac2f19fcacbee2853554b9a24da85797b1cef31b330465d0f24d7fb1', 'hex')
-const feed = hypercore(path.join(__dirname, 'dbs', 'testCOPY'), key, { sparse: true })
-
-const db = new Hyperbee(feed, hbOpts)
-
-db.feed.ready(async () => {
-  replicate(feed, { lookup: true, live: true })
-
-  const { exec, onEnd } = await HFBT.execStream(strat, market, {
-    from,
-    to
-  })
-
-  // dazaar market data 5min candles
-  const kp = 'c!5m!'
-
-  const from = 1358182044000
-  const to = 1358342119000
-
-  const s = db.createReadStream({ gte: kp + from, lte: kp + to })
-
-  let btState
-  s.on('data', async (data) => {
-    const { key, value } = data
-    btState = await exec(key, value)
-  })
-
-  s.on('end', async () => {
-    btState = await onEnd(btState)
-  })
-})
+await onEnd(btState)
 ```
+
+For the full blog article, visit [the Bitfinex Terminal repo](https://github.com/bitfinexcom/bitfinex-terminal/blob/master/articles/backtesting-with-hf.md)
 
 ### Contributing
 
