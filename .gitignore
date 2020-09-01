@@ -8,4 +8,4 @@ npm-debug.log
 .DS_Store
 package-lock.json
 
-examples/dbs
+dbs
