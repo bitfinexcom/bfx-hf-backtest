@@ -1,3 +1,8 @@
+# 1.1.2
+
+ - Changed Examples for Dazaar to Bitfinex Terminal
+ - Adds Dazaar Card for example
+
 # 1.1.1
 - fix: remove babel
 - fix: add missing dependency
