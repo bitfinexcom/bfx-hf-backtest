@@ -7,9 +7,11 @@ const swarm = require('dazaar/swarm')
 const Hyperbee = require('hyperbee')
 const keyEncoding = require('bitfinex-terminal-key-encoding')
 
-const HFBT = require('bfx-hf-backtest')
+const HFBT = require('../')
 const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
 const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
+
+const terms = require('bitfinex-terminal-terms-of-use')
 
 const get24HoursAgo = (date) => {
   const res = date.getTime() - (1 * 86400 * 1000)
@@ -27,7 +29,7 @@ const strat = EMAStrategy(market)
 const dmarket = dazaar('dbs/terminal-backtest')
 
 const card = require('./bitfinex.terminal.btcusd.candles.json')
-const buyer = dmarket.buy(card, { sparse: true })
+const buyer = dmarket.buy(card, { sparse: true, terms })
 
 buyer.on('feed', async function () {
   console.log('got feed')
