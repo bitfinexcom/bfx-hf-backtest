@@ -31,7 +31,7 @@ const dmarket = dazaar('dbs/terminal-backtest')
 const card = require('./bitfinex.terminal.btcusd.candles.json')
 const buyer = dmarket.buy(card, { sparse: true, terms })
 
-let replication
+let replication = null
 buyer.on('feed', async function () {
   console.log('got feed')
 
