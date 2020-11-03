@@ -1,5 +1,8 @@
-# 1.1.2
+# 1.1.3
+ - streams: keys are objects by default now
+ - streams: add `manualOnStart` flag
 
+# 1.1.2
  - Changed Examples for Dazaar to Bitfinex Terminal
  - Adds Dazaar Card for example
 
