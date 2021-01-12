@@ -20,8 +20,7 @@
   "scripts": {
     "lint": "standard",
     "test": "npm run lint && npm run unit",
-    "unit": "DEBUG='bfx:hf:*' NODE_PATH=lib/ NODE_ENV=test istanbul cover _mocha -- -R spec -b --recursive",
-    "test-without-coverage": "NODE_ENV=test mocha -R spec -b --recursive",
+    "unit": "NODE_ENV=test mocha -R spec -b --recursive",
     "exec_docs": "node_modules/jsdoc-to-markdown/bin/cli.js lib/*.js > docs/exec.md",
     "docs": "npm run exec_docs"
   },
@@ -55,13 +54,8 @@
     "bitfinex-terminal-key-encoding": "^1.0.0",
     "bitfinex-terminal-terms-of-use": "^4.0.0",
     "dazaar": "^1.2.0",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^7.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.0.1",
     "hyperbee": "^1.3.0",
     "hypercore": "^9.5.0",
-    "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^5.0.1",
     "mocha": "^6.2.0",
     "standard": "^14.2.0"
