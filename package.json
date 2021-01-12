@@ -51,16 +51,15 @@
     "ws": "^6.0.0"
   },
   "devDependencies": {
-    "@hyperswarm/replicator": "^1.7.2",
     "async": "^3.2.0",
     "bitfinex-terminal-key-encoding": "^1.0.0",
-    "bitfinex-terminal-terms-of-use": "^1.0.0",
+    "bitfinex-terminal-terms-of-use": "^4.0.0",
     "dazaar": "^1.2.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^7.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
-    "hyperbee": "0.0.18",
+    "hyperbee": "^1.3.0",
     "hypercore": "^9.5.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^5.0.1",
