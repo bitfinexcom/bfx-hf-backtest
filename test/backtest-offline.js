@@ -17,7 +17,7 @@ describe('basic', () => {
     const state = await execOffline(strategy, args)
 
     const { trades } = state.strategy
-    assert.strictEqual(trades.length, 14)
+    assert.strictEqual(trades.length, 8)
 
     const { fees, pl, prices } = trades.reduce((acc, el) => {
       acc.pl += el.pl
@@ -27,18 +27,15 @@ describe('basic', () => {
       return acc
     }, { fees: 0, pl: 0, prices: [] })
 
-    assert.strictEqual(fees, 1103.4021953382398)
-    assert.strictEqual(pl, -5370.304526218242)
+    assert.strictEqual(fees, 633.102)
+    assert.strictEqual(pl, -1672.102)
     assert.deepStrictEqual(
       prices,
       [
         39130, 38844,
-        37910, 39600,
-        39657, 38844,
-        38888.09766912, 39415,
-        39560, 38734,
-        39163, 40650,
-        39972, 41334
+        39600, 38844,
+        39415, 38734,
+        40650, 41334
       ]
     )
   })
@@ -62,11 +59,11 @@ describe('basic', () => {
       return acc
     }, { fees: 0, pl: 0, prices: [] })
 
-    assert.strictEqual(fees, 12.77324954092)
-    assert.strictEqual(pl, -39.73275680092024)
+    assert.strictEqual(fees, 12.772849540920001)
+    assert.strictEqual(pl, -39.93235680092029)
     assert.deepStrictEqual(
       prices,
-      [1075.09213886, 1056.9326316, 1049.3, 1067.4, 1064.3, 1073.6]
+      [1075.09213886, 1056.9326316, 1049.1, 1067.4, 1064.3, 1073.6]
     )
   })
 })
