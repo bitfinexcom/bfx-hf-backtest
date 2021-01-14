@@ -1,3 +1,7 @@
+# 2.0.0
+ - offlineBacktest: do not calculate and include simulate trades in
+   candle events
+
 # 1.1.3
  - streams: keys are objects by default now
  - streams: add `manualOnStart` flag
