@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "bfx-api-node-models": "^1.6.3",
-    "bfx-hf-strategy": "git+https://github.com/bitfinexcom/bfx-hf-strategy.git#v1.5.5",
+    "bfx-hf-strategy": "git+https://github.com/tarcisiozf/bfx-hf-strategy.git#refactor-pnl",
     "bfx-hf-util": "github:bitfinexcom/bfx-hf-util#v1.0.12",
     "cli-table": "^0.3.1",
     "colors": "^1.3.1",
